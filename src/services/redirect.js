@@ -1,3 +1,5 @@
 export const landingRedirecter = function (isLogged, router) {
-  if (!isLogged) router.push("login");
+  isLogged, router;
+  //if (!isLogged) router.push("login");
+  router.push({ name: "dash" });
 };

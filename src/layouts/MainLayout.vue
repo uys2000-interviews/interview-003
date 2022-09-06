@@ -1,17 +1,13 @@
 <template>
+  <side-menu />
   <router-view />
 </template>
+
 <script>
-import { landingRedirecter } from "@/services/redirect";
-import user from "@/store/user";
+import sideMenu from "@/components/sideMenu.vue";
 export default {
-  data() {
-    return {
-      user: user(),
-    };
-  },
-  mounted() {
-    landingRedirecter(this.user.isLogged, this.$router);
+  components: {
+    sideMenu,
   },
 };
 </script>

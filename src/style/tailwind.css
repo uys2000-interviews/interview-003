@@ -1,7 +1,22 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 @layer components {
-  .btn {
+
+  /* left-mid" */
+  .lm {
+    @apply flex justify-start align-bottom;
   }
+  .cm {
+    @apply flex justify-center align-bottom;
+  }
+
+  .menu-btn {
+    @apply rounded-md p-2 invert-0 
+      active:invert transition 
+      w-min overflow-hidden 
+      cursor-pointer select-none;
+  }
+
 }

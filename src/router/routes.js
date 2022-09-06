@@ -6,15 +6,15 @@ export default [
     component: MainLayout,
     children: [
       {
-        path: "/login",
-        name: "login",
-        component: () => import("@/views/LoginView.vue"),
-      },
-      {
         path: "/dashboard",
         name: "dash",
         component: () => import("@/views/MainView.vue"),
       },
     ],
+  },
+  {
+    path: "/login",
+    name: "login",
+    component: () => import("@/views/LoginView.vue"),
   },
 ];
