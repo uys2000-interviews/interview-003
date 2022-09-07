@@ -1,5 +1,5 @@
 <template>
-  <div class="h-[100vh] flex flex-col justify-center items-center">
+  <div class="h-screen w-screen flex flex-col justify-center items-center">
     <div class="w-min">
       <img
         :src="require('@/assets/imgs/login.png')"
@@ -8,7 +8,7 @@
       />
       <div class="w-max py-5">Giriş Yapız (boş geçebilirsiniz)</div>
     </div>
-    <form class="grid grid-cols-3 gap-px" :onsubmit="login">
+    <form class="grid grid-cols-3 gap-px" onsubmit="return false">
       <label for="mail"> E-Mail </label>
       <input
         v-model="mail"
@@ -24,7 +24,7 @@
         class="border col-span-2 rounded"
       />
       <div class="col-span-2" />
-      <button type="submit" class="btn">Giriş Yap</button>
+      <button type="submit" class="btn" @click="login">Giriş Yap</button>
     </form>
   </div>
 </template>
@@ -41,7 +41,7 @@ export default {
   methods: {
     login: function () {
       this.user.login(this.mail);
-      this.$router.push({ name: "dash" });
+      this.$router.push({ name: "Dashboard" });
       return false;
     },
   },

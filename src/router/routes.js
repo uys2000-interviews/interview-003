@@ -7,7 +7,11 @@ export default [
     children: [
       {
         path: "/dashboard",
-        name: "dash",
+        name: "Dashboard",
+        component: () => import("@/views/MainView.vue"),
+      },{
+        path: "/dashboard",
+        name: "Settings",
         component: () => import("@/views/MainView.vue"),
       },
     ],

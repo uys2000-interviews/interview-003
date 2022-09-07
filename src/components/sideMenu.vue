@@ -18,7 +18,7 @@
       v-for="btn in page.pages"
       :key="btn"
       class="w-fit menu-btn flex"
-      @click="page.setPage(btn.text)"
+      @click="$router.push({ name: btn.text })"
     >
       <span class="icon text-2xl -mt-1"> {{ btn.icon }}</span>
       <div style></div>
@@ -44,7 +44,7 @@
   <!--Mobil-->
   <div class="block sm:hidden">
     <div
-      class="fixed sm:hidden w-screen t-f overflow-hidden"
+      class="fixed sm:hidden w-screen t-f overflow-hidden bg-bg"
       :class="{
         '-top-[100%]': !isOpen,
         'top-[50%]': isOpen,
@@ -55,7 +55,7 @@
         <div
           v-for="btn in page.pages"
           :key="btn"
-          class="w-fit menu-btn"
+          class="w-fit menu-btn  lm"
           @click="mobilMenuEvent(btn.text)"
         >
           <span class="icon text-2xl -mt-1"> {{ btn.icon }}</span>
@@ -83,7 +83,7 @@ export default {
   methods: {
     mobilMenuEvent: function (value) {
       this.isOpen = !this.isOpen;
-      this.page.setPage(value);
+      this.$router.push({ name: value });
     },
   },
 };
